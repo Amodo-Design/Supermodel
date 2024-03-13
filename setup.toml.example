@@ -9,7 +9,7 @@ max_droplet_radius = 10e-6
 num_droplet_radii = 1000
 
 [pathogen]
-pathogen_path = "/home/user/foler/pathogens.toml"
+pathogen_path = "/home/user/folder/pathogens.toml"
 
 [case_studies]
-case_study_path = "/home/user/foler/case_studies_v1.toml"
+case_study_path = "/home/user/folder/case_studies_v1.toml"

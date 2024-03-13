@@ -359,15 +359,29 @@ def Supermodel(
         output_path = setup_params['environment']['output_path'], 
         other_info: str = '', 
         multithread=False,
-    ) -> list[Future]:
-    """Main function for running multiple models in parallel. Runs the model concurrently with the specified number of repeats, returns list of the output dataframes, for the user to do as they please with.
-    model: Model object to run
-    repeats: number of times to run the model
-    max_threads: number of threads to run concurrently
-    to_csv: if True, output data to csv
-        output_path: path to output csvs to, defaults to setup.toml value
-        other_info: string to append to output csv name
-    multithread: if True, use multithreading, else execute sequentially. Currently havily IO limited and needs to be refactored to use ProcessPoolExecutor, but Model not picklable (yet)"""
+    ) -> list[pd.DataFrame]:
+    """Main function for running multiple models in parallel. Runs the model concurrently or sequentially  with the specified number of repeats, returns list of the output Pandas dataframes, for the user to do as they please with.
+
+    Paramaters:
+        model: Model object to run
+        repeats: number of times to run the model
+        max_threads: number of threads to run concurrently
+        to_csv: if True, output data to csv
+            output_path: path to output csvs to, defaults to setup.toml value
+            other_info: string to append to output csv name
+        multithread: if True, use multithreading, else execute sequentially. Currently havily IO limited and needs to be refactored to use ProcessPoolExecutor, but Model not picklable (yet)
+    Returns: 
+        Pandas dataframe of the output data. Column names are as follows:
+            "Susceptible Occupants",
+            "Infected Occupants",
+            "Infected - Not Quarantined Occupants",
+            "Dead Occupants",
+            "Quarantined Occupants",
+            "Recovered Occupants",
+            "Viral Load - Lower",
+            "Viral Load - Upper",
+            "Time"
+        """
 
     #use Rich to make nice progress bars
     progress = Progress(
@@ -387,7 +401,7 @@ def Supermodel(
                         _model: Model = copy.deepcopy(model)
                         task_id = progress.add_task("{}: repeat {} of {}".format(_model.name,repeat_no+1, repeats),start=False, num_infected=0, viral_load=0, time=0)
                         _future = pool.submit(run_model,_model, task_id, progress)
-                        results.append(_future)
+                        results.append(_future.result())
                         if to_csv: _future.result().to_csv(output_path + _model.name + '_rep_' + str(repeat_no) + other_info +'.csv')
     
     else:
@@ -395,10 +409,11 @@ def Supermodel(
             for model, repeats in input:
                 for repeat_no in range(repeats):
                     _model: Model = copy.deepcopy(model)
-                    _future = run_model(_model, None, None)
+                    task_id = progress.add_task("{}: repeat {} of {}".format(_model.name,repeat_no+1, repeats),start=False, num_infected=0, viral_load=0, time=0)
+                    _future = run_model(_model, task_id, progress)
                     results.append(_future)
                     if to_csv: _future.to_csv(output_path + _model.name + '_rep_' + str(repeat_no) + other_info +'.csv')
-
+ 
     return results
 
 def run_model(model: Model, task_id: Optional[TaskID],  progress:Optional[Progress]) -> pd.DataFrame:
