@@ -1,0 +1,14 @@
+matplotlib==3.7.2
+numpy==1.24.4
+pandas==2.0.3
+plotly==5.15.0
+scipy==1.11.1
+seaborn==0.12.2
+pyqt5==5.15.2
+openpyxl==3.1.2
+rich==13.5.3
+tomli
+schema==0.7.5
+ipywidgets==8.1.1
+ipykernel
+numba

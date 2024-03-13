@@ -1,0 +1,11 @@
+[pydeps]
+
+include_missing = True
+show_deps = True
+pylib = False
+max_bacon = 10
+exclude =
+    matplotlib
+    matplotlib.pyplot
+    numpy
+    pandas

@@ -1,0 +1,15 @@
+# The system setup - replace with relevant paramaters for your environment
+[environment]
+output_path = "/home/user/foler/output"
+graphics_path = "/home/user/foler/graphics"
+
+[modeling]
+min_droplet_radius = 0
+max_droplet_radius = 10e-6
+num_droplet_radii = 1000
+
+[pathogen]
+pathogen_path = "/home/user/foler/pathogens.toml"
+
+[case_studies]
+case_study_path = "/home/user/foler/case_studies_v1.toml"

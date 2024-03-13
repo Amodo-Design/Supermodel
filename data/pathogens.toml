@@ -1,0 +1,239 @@
+[[pathogen]]
+name = "covid-19"
+cv = 437000000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.00
+asymptomatic_proportion = 1
+time_to_recovery = 207360000
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 4
+inf_curve_scale = 1
+inf_curve_offset = 0
+
+time_to_symptoms = 475200
+UV_deactivation.222 = 5.9
+[[pathogen]]
+name = "covid-19-new"
+cv = 5.589E14
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.00
+asymptomatic_proportion = 1
+time_to_recovery = 207360000
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 4
+inf_curve_scale = 1
+inf_curve_offset = 0
+
+time_to_symptoms = 475200
+UV_deactivation.222 = 5.9
+[[pathogen]]
+name = "covid-19-DP"
+cv = 437000000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.00
+asymptomatic_proportion = 0
+time_to_recovery = 207360000
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 4
+inf_curve_scale = 1
+inf_curve_offset = 0
+
+time_to_symptoms = 259200
+UV_deactivation.222 = 5.9
+
+
+[[pathogen]]
+name = "covid-19-0.2"
+cv = 43700000000000
+pi = 2
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.00
+asymptomatic_proportion = 0.5
+time_to_recovery = 207360000
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 4
+inf_curve_scale = 1
+inf_curve_offset = 0
+
+time_to_symptoms = 475200
+UV_deactivation.222 = 5.9
+
+[[pathogen]]
+name = "covid-19 multimode"
+comments = "multimode test"
+
+cv = 437000000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.01
+asymptomatic_proportion = 0.3
+time_to_recovery = 172800000
+time_to_death = 1209600
+inf_curve_mean = 6
+inf_curve_std_dev = 7
+inf_curve_scale = 1.0
+inf_curve_offset = 0
+
+time_to_symptoms = 475200
+
+[pathogen.populations.resistant]
+222 = 0.001
+population_fraction = 0.5
+
+[pathogen.populations.normal]
+222 = 0.005
+population_fraction = 0.5
+
+[[pathogen]]
+name = "X_1_10x"
+cv = 4370000000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.00
+asymptomatic_proportion = 1
+time_to_recovery = 2073600
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 4
+inf_curve_scale = 1
+inf_curve_offset = 0
+
+time_to_symptoms = 475200
+UV_deactivation.222 = 5.9
+
+[[pathogen]]
+name = "X_1"
+cv = 5724700000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.00
+asymptomatic_proportion = 1
+time_to_recovery = 2073600
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 4
+inf_curve_scale = 1
+inf_curve_offset = 0
+
+time_to_symptoms = 475200
+UV_deactivation.222 = 5.9
+
+[[pathogen]]
+name = "X_1_high"
+cv = 5724700000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.00
+asymptomatic_proportion = 1
+time_to_recovery = 2073600
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 7
+inf_curve_scale = 1.0
+inf_curve_offset = 0
+
+time_to_symptoms = 475200
+UV_deactivation.222 = 5.9
+[[pathogen]]
+name = "X_1 multimode"
+cv = 5724700000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.01
+asymptomatic_proportion = 0.3
+time_to_recovery = 20736001
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 7
+inf_curve_scale = 1.0
+inf_curve_offset = 0
+time_to_symptoms = 475200
+UV_deactivation.222 = 5.9
+[pathogen.populations.resistant]
+222 = 0.001
+population_fraction = 0.5
+[pathogen.populations.normal]
+222 = 0.05
+population_fraction = 0.5
+
+
+
+
+[[pathogen]]
+name = "X_2"
+cv = 437000000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.01
+asymptomatic_proportion = 0.3
+time_to_recovery = 1728000
+time_to_death = 1209600
+inf_curve_mean = 6
+inf_curve_std_dev = 7
+inf_curve_scale = 1.0
+inf_curve_offset = 0
+
+
+
+
+
+time_to_symptoms = 475200
+
+[[pathogen]]
+name = "X_3"
+cv = 990000000000000
+pi = 20
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 0.01
+asymptomatic_proportion = 0.3
+time_to_recovery = 2073600
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 7
+inf_curve_scale = 6.5
+inf_curve_offset = 0
+
+
+
+
+
+time_to_symptoms = 475200
+
+[[pathogen]]
+name = "X_4"
+cv = 12969000000000000
+pi = 1
+lambda_v = 5.55555555555556e-5
+pathogen_size = 1.2e-7
+lethality = 1.0
+asymptomatic_proportion = 0.3
+time_to_recovery = 2073600
+time_to_death = 1728000
+inf_curve_mean = 6
+inf_curve_std_dev = 7
+inf_curve_scale = 1.0
+inf_curve_offset = 0
+
+
+
+
+
+time_to_symptoms = 475200
